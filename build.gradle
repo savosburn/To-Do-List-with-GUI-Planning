@@ -25,6 +25,5 @@ test {
     useJUnitPlatform()
 }
 
-application {
-    mainClassName = 'ucf.assignments.App'
-}
+
+mainClassName = 'ucf.assignments.ToDoList'
