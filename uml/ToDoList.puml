@@ -1,4 +1,47 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
+class App {
+    + main()
+    + start()
+}
+
+class ListsController {
+
+    ArrayList<ArrayList<HashMap<String, String>>>: To Do Lists
+
+    + addToDoList(): ArrayList
+    + removeToDoList(): ArrayList
+    + editToDoListTitle()
+    + saveAllItemsExternally()
+    + loadMultipleToDoListsExternally()
+}
+
+class ToDoList {
+    String listTitle
+    ArrayList<HashMap<String, String>>: Items
+
+    + sortItemsByDate(): ArrayList
+    + addItem(): ArrayList
+    + removeItem(): ArrayList
+    + displayAllItems(): ArrayList or String?
+    + displayIncompleteItems(): ArrayList or String?
+    + displayCompleteItems(): ArrayList or String?
+    + saveItemsExternally()
+    + loadListFromExternal()
+}
+
+class Item {
+    String itemDescription
+    String itemDate
+
+    + editItemDescription()
+    + editItemDueDate()
+    + markItemComplete(): boolean
+}
+
+App - ListsController
+ListsController *-- ToDoList
+ToDoList *- Item
+
 @enduml
