@@ -6,42 +6,36 @@ class App {
     + start()
 }
 
-class ListsController {
-
-    ArrayList<ArrayList<HashMap<String, String>>>: To Do Lists
-
-    + addToDoList(): ArrayList
-    + removeToDoList(): ArrayList
-    + editToDoListTitle()
-    + saveAllItemsExternally()
-    + loadMultipleToDoListsExternally()
+class ListController {
+    + newToDoListButtonClicked(): add new to do list
+    + deleteListsButtonClicked(): remove an existing to do list
+    + saveListsButtonClicked(): save all items in all to do lists to external storage
+    + loadListsButtonClicked():
+        + loadSingleToDoListButtonClicked(): load single to do list from external storage
+        + loadToDoListsButtonClicked(): load multiple to do lists
 }
 
-class ToDoList {
-    String listTitle
-    ArrayList<HashMap<String, String>>: Items
-
-    + sortItemsByDate(): ArrayList
-    + addItem(): ArrayList
-    + removeItem(): ArrayList
-    + displayAllItems(): ArrayList or String?
-    + displayIncompleteItems(): ArrayList or String?
-    + displayCompleteItems(): ArrayList or String?
-    + saveItemsExternally()
-    + loadListFromExternal()
+class ToDoListController {
+    + newTaskButtonClicked(): add new item to existing to do list
+    + deleteItemsButtonClicked(): remove item from existing to do list
+    + taskCompletedCheckBoxClicked(): mark an item in a to do list as complete
+    + displayButtonClicked():
+        + displayAllItemsButtonClicked(): display all existing items
+        + displayIncompleteItemsButtonClicked(): display only the incompleted items
+        + displayCompletedItemsButtonClicked(): display completed items
+    + sortByDateButtonClicked(): sort items by due date
+    + titleTextBoxClicked(): edit the title of existing to do list
+    + saveItemsButtonClicked(): save all items in a single to do list to external storage
 }
 
-class Item {
-    String itemDescription
-    String itemDate
-
-    + editItemDescription()
-    + editItemDueDate()
-    + markItemComplete(): boolean
+class TaskController {
+    + descriptionTextBoxClicked(): edit description of an item within an existing to do list
+    + calendarClicked(): edit the due date of an item within an existing to do list
 }
 
-App - ListsController
-ListsController *-- ToDoList
-ToDoList *- Item
+javafx.Application <|- App
+App -- ListController
+ListController *-> ToDoListController
+ToDoListController *-> TaskController
 
 @enduml
