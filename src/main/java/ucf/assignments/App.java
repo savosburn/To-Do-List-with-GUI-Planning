@@ -21,8 +21,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ListsController.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ListController.fxml")));
 
             Scene scene = new Scene(root);
 
@@ -31,7 +32,7 @@ public class App extends Application {
             primaryStage.show();
 
         } catch (IOException e) {
-            e.printStackTrace();;
+            e.printStackTrace();
         }
     }
 }

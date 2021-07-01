@@ -19,10 +19,10 @@
                   <Font name="System Bold" size="36.0" />
                </font>
             </Text>
-            <MenuButton layoutX="295.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #CD5C5C;" text="File Actions" textFill="WHITE">
+            <MenuButton fx:id="fileActionsMenu" layoutX="295.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #CD5C5C;" text="File Actions" textFill="WHITE">
               <items>
-                <MenuItem fx:id="saveListsButtonClicked" mnemonicParsing="false" text="Save To Do Lists" />
-                <MenuItem fx:id="loadListsButtonClicked" mnemonicParsing="false" text="Load To Do Lists" />
+                <MenuItem fx:id="saveListsButton" mnemonicParsing="false" onAction="#saveListsButtonPressed" text="Save To Do Lists" />
+                <MenuItem fx:id="loadListsButton" mnemonicParsing="false" onAction="#loadListsButtonPressed" text="Load To Do Lists" />
               </items>
                <font>
                   <Font name="System Bold" size="16.0" />
@@ -33,12 +33,12 @@
             </MenuButton>
          </children>
       </AnchorPane>
-      <ListView layoutX="17.0" layoutY="96.0" prefHeight="418.0" prefWidth="410.0">
+      <ListView fx:id="toDoListLists" layoutX="17.0" layoutY="96.0" prefHeight="418.0" prefWidth="410.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ListView>
-      <Button fx:id="newToDoListButtonClicked" layoutX="307.0" layoutY="529.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="118.0" style="-fx-background-color: #F08080;" text="+ Add List" textFill="WHITE">
+      <Button fx:id="newToDoListButton" layoutX="307.0" layoutY="529.0" mnemonicParsing="false" onAction="#addListButtonPressed" prefHeight="37.0" prefWidth="118.0" style="-fx-background-color: #F08080;" text="+ Add List" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -46,7 +46,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="deleteListsButtonClicked" layoutX="14.0" layoutY="529.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="118.0" style="-fx-background-color: #F08080;" text="🗑 Delete List" textFill="WHITE">
+      <Button fx:id="deleteListsButton" layoutX="14.0" layoutY="529.0" mnemonicParsing="false" onAction="#deleteListButtonPressed" prefHeight="37.0" prefWidth="118.0" style="-fx-background-color: #F08080;" text="🗑 Delete List" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
