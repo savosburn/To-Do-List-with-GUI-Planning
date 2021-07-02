@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 4 Solution
+ *  Copyright 2021 Savannah Osburn
+ */
+
 package ucf.assignments;
 
 import java.net.URL;
@@ -35,6 +40,8 @@ public class TaskController {
     void addItemButtonPressed(ActionEvent event) {
         // Item title, description, and date added to table
         // Scene switches from TaskController to ToDoListController
+
+        // add task object to list of tasks in a to do list object
     }
 
     @FXML
@@ -51,8 +58,10 @@ public class TaskController {
 
     @FXML
     void returnToToDoListButtonPressed(ActionEvent event) {
+        // Make sure that any field that was filled is cleared
         // Change scene from TaskController to ToDoListController
 
+        // return something to make this testable
     }
 
     @FXML

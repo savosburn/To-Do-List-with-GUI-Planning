@@ -23,7 +23,7 @@ public class App extends Application {
     public void start(Stage primaryStage) {
 
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ListController.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ListsController.fxml")));
 
             Scene scene = new Scene(root);
 

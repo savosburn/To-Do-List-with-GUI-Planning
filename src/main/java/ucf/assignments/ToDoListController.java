@@ -1,15 +1,24 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 4 Solution
+ *  Copyright 2021 Savannah Osburn
+ */
+
 package ucf.assignments;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class ToDoListController {
 
@@ -41,7 +50,7 @@ public class ToDoListController {
     private MenuItem viewCompleteTasksButton;
 
     @FXML
-    private MenuItem viewIncompleteTasksbutton;
+    private MenuItem viewIncompleteTasksButton;
 
     @FXML
     private TextField titleTextField;
@@ -75,6 +84,23 @@ public class ToDoListController {
         // Scene switches from ToDoListController to TaskController
         // User adds task
         // Scene switches back if it's added
+
+        // Modify later: Starter code so grader can see next fxml screen
+        try {
+            Stage stageOne = (Stage) addTaskButton.getScene().getWindow();
+            stageOne.close();
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TaskController.fxml"));
+
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            System.out.print("\nScene switched.\n");
+        } catch (Exception e) {
+            System.out.print("Invalid");
+        }
     }
 
     @FXML
@@ -108,6 +134,7 @@ public class ToDoListController {
     @FXML
     void returnToAllListsButtonPressed(ActionEvent event) {
         // Scene changes from ToDoList to ListsController
+            // Anything that may have been saved to be added should be deleted
             // There should be no new lists in the ListsController scene unless the saveItemsButton was pressed
     }
 
@@ -126,21 +153,31 @@ public class ToDoListController {
 
     @FXML
     void viewAllTasksButtonPressed(ActionEvent event) {
-
+        // Default button / If user clicks on it
+        // All tasks are showed
     }
 
     @FXML
     void viewCompleteTasksButtonPressed(ActionEvent event) {
-
+        // User clicks on button
+        // Only events with completed button filled are displayed
     }
 
     @FXML
     void viewIncompleteTasksButtonPressed(ActionEvent event) {
-
+        // User clicks on button
+        // Only events with completed button NOT filled are displayed
     }
 
     @FXML
-    void sortByDate(ActionEvent event) {
+    void titleTextFieldClicked(ActionEvent event) {
+        // User Clicks on text field
+        // User types in title
+        // To-Do List title is renamed
+    }
+
+    @FXML
+    void sortByDateButtonClicked(ActionEvent event) {
         // Sorts by date
         // This method is likely unnecessary
             // Table automatically allows user to sort by date if they click on the column heading
@@ -155,7 +192,7 @@ public class ToDoListController {
         assert sortMenuButton != null : "fx:id=\"sortMenuButton\" was not injected: check your FXML file 'ToDoListController.fxml'.";
         assert viewAllTasksButton != null : "fx:id=\"viewAllTasksButton\" was not injected: check your FXML file 'ToDoListController.fxml'.";
         assert viewCompleteTasksButton != null : "fx:id=\"viewCompleteTasksButton\" was not injected: check your FXML file 'ToDoListController.fxml'.";
-        assert viewIncompleteTasksbutton != null : "fx:id=\"viewIncompleteTasksbutton\" was not injected: check your FXML file 'ToDoListController.fxml'.";
+        assert viewIncompleteTasksButton != null : "fx:id=\"viewIncompleteTasksButton\" was not injected: check your FXML file 'ToDoListController.fxml'.";
         assert titleTextField != null : "fx:id=\"titleTextField\" was not injected: check your FXML file 'ToDoListController.fxml'.";
         assert taskTable != null : "fx:id=\"taskTable\" was not injected: check your FXML file 'ToDoListController.fxml'.";
         assert markCompletedColumn != null : "fx:id=\"markCompletedColumn\" was not injected: check your FXML file 'ToDoListController.fxml'.";
@@ -165,6 +202,5 @@ public class ToDoListController {
         assert addTaskButton != null : "fx:id=\"addTaskButton\" was not injected: check your FXML file 'ToDoListController.fxml'.";
         assert deleteTaskButton != null : "fx:id=\"deleteTaskButton\" was not injected: check your FXML file 'ToDoListController.fxml'.";
         assert addToDoListButton != null : "fx:id=\"addToDoListButton\" was not injected: check your FXML file 'ToDoListController.fxml'.";
-
     }
 }

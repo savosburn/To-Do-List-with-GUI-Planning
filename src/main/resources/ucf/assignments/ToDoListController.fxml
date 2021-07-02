@@ -44,7 +44,7 @@
               <items>
                 <MenuItem fx:id="viewAllTasksButton" mnemonicParsing="false" onAction="#viewAllTasksButtonPressed" text="All Tasks" />
                 <MenuItem fx:id="viewCompleteTasksButton" mnemonicParsing="false" onAction="#viewCompleteTasksButtonPressed" text="Complete Tasks" />
-                  <MenuItem fx:id="viewIncompleteTasksbutton" mnemonicParsing="false" onAction="#viewIncompleteTasksButtonPressed" text="Incomplete Tasks" />
+                  <MenuItem fx:id="viewIncompleteTasksButton" mnemonicParsing="false" onAction="#viewIncompleteTasksButtonPressed" text="Incomplete Tasks" />
               </items>
                <font>
                   <Font name="System Bold" size="17.0" />
@@ -60,7 +60,7 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
-      <TextField fx:id="titleTextField" layoutX="13.0" layoutY="109.0" prefHeight="25.0" prefWidth="860.0" promptText="Enter Title...">
+      <TextField fx:id="titleTextField" layoutX="13.0" layoutY="109.0" onAction="#titleTextFieldClicked" prefHeight="25.0" prefWidth="860.0" promptText="Enter Title...">
          <font>
             <Font size="17.0" />
          </font>
