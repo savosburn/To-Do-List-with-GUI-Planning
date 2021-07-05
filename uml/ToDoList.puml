@@ -6,6 +6,14 @@ class App {
     + start()
 }
 
+class AllLists {
+    // Each AllLists object should be able to hold a list of ToDoLists
+    - ToDoLists: ArrayList<>
+
+    + addToDoList(): adds a new to do list
+    + deleteToDolist(): removes an existing to do list
+}
+
 class ToDoList {
     // Each to do list should be able to hold a table of tasks
     - toDoTitle: string
@@ -61,12 +69,23 @@ class TaskController {
     + titleTextFieldFilled((ActionEvent): add title to item in to do list
 }
 
+
+
+
 javafx.Application <|- App
 App -- ListController
-ListController *-> ToDoListController
-ToDoListController *-> ToDoList
-ToDoListController *-> TaskController
-TaskController *-> Task
-ToDoList *-> Task
+App -- AllLists
+ListController *--> ToDoListController
+ToDoListController *--> TaskController
+AllLists *--> ToDoList
+ToDoList *--> Task
+AllLists - ListController
+ToDoList - ToDoListController
+Task - TaskController
+
+
+
+
+
 
 @enduml
