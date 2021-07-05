@@ -77,6 +77,7 @@ public class ListsController {
                 Parent root = fxmlLoader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
+                stage.setTitle("To Do");
                 stage.show();
 
             System.out.print("\nScene switched.\n");

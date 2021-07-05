@@ -95,6 +95,7 @@ public class ToDoListController {
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
+            stage.setTitle("New Task");
             stage.show();
 
             System.out.print("\nScene switched.\n");
